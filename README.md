@@ -65,7 +65,8 @@ machine) in the Git repository.
 
 For example: Say you choose Kubernetes to deploy the docker image, you would
 need to include manifests like *Namespace*, *Service* and *Deployment* files in
-your final submission
+your final submission. It is not necessarily required to include code and
+configuration needed to deploy the Kubernetes cluster itself.
 
 
 ##### Documentation
