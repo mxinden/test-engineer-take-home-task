@@ -25,17 +25,24 @@ Write a small command line tool that:
 
 ##### Hint
 
-You can retrieve the current block height via the JSON API. For example with
-*curl* and *jq* you could retrieve the current block number with:
+- You can retrieve the current block number via the JSON API. For example with
+  *curl* and *jq* you could retrieve the current block number with:
 
-```shell
-curl \
-        -H "Content-Type: application/json" \
-        -d '{"id":1, "jsonrpc":"2.0", "method": "chain_getBlock"}' \
-        localhost:9933 \
-| jq \
-        .result.block.header.number
-```
+  ```shell
+  curl \
+          -H "Content-Type: application/json" \
+          -d '{"id":1, "jsonrpc":"2.0", "method": "chain_getBlock"}' \
+          localhost:9933 \
+  | jq \
+          .result.block.header.number
+  ```
+
+- The block number returned by the `chain_getBlock` endpoint is a [SCALE][1]
+  encoded integer represented in hexadecimal format. For all block number values
+  within the range `[0, 2^6)` one can ignore the fact that it is SCALE encoded
+  (given that it would be within the *single byte mode*). You can either ignore
+  the special encoding and stay within the before mentioned range, import a
+  library to do the encoding, ... or write one yourself.
 
 
 #### Additional information
@@ -90,3 +97,5 @@ send us a copy of the repository as a .zip file via e-mail.
 
 In case you have any questions in regards to the task feel free to reach out to
 us.
+
+[1]: https://substrate.dev/docs/en/overview/low-level-data-format#compact-general-integers
