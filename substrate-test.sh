@@ -33,3 +33,5 @@ while [ "$RESULT_BLOCK_HEADER_NUMBER" != "a" ]
     OLD_VALUE=$RESULT_BLOCK_HEADER_NUMBER
     #echo 0x$RESULT_BLOCK_HEADER_NUMBER
 done
+
+docker stop $CONTAINER_ID > /dev/null 2>&1
