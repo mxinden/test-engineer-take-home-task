@@ -53,9 +53,9 @@ You can use whatever programming language you like to write the command line
 tool. Make sure to include instructions on how to build and run the tool within
 the final Git repository.
 
-We highly recommended not to do this as a shell script. In case you want to
-anyways, make sure it follows best-practices, is maintainable and safe (no usage
-of not-previously-defined variables, no pipeline failure masking, ...).
+We highly recommend not to do this as a shell script. In case you want to
+anyways, make sure it follows best-practices, is maintainable and safe (no
+usage of not-previously-defined variables, no pipeline failure masking, ...).
 
 
 ##### Deployment tooling
